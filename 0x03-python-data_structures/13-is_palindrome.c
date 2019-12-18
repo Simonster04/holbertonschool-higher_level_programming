@@ -10,18 +10,16 @@
 int is_palindrome(listint_t **head)
 {
 	int i, cont = 0, med, aux[1024];
-	listint_t *tmp;
 
 	if (!head)
 	{
 		return (0);
 	}
 
-	tmp = *head;
-	while (tmp)
+	while (*head)
 	{
-		aux[cont] = tmp->n;
-		tmp = tmp->next;
+		aux[cont] = (*head)->n;
+		*head = (*head)->next;
 		cont++;
 	}
 	med = cont / 2;
@@ -35,3 +33,4 @@ int is_palindrome(listint_t **head)
 	}
 	return (1);
 }
+
