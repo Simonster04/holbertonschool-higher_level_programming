@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-import string
-print(string.ascii_lowercase[0:], end="")
+for i in range(97, 123):
+    print("{:s}".format(chr(i)), end="")
