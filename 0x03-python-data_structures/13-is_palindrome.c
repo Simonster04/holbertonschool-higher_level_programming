@@ -9,7 +9,7 @@
 
 int is_palindrome(listint_t **head)
 {
-	int i, cont = 0, med, aux[1024];
+	int i, cont = 0, med, aux[100000];
 
 	if (!head)
 	{
