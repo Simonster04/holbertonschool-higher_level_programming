@@ -4,6 +4,6 @@ def best_score(a_dictionary):
         return None
     max = list(a_dictionary.keys())[0]
     for i in a_dictionary:
-       if a_dictionary[i] >= a_dictionary[max]:
+        if a_dictionary[i] > a_dictionary[max]:
             max = i
     return max
