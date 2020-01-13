@@ -1,0 +1,56 @@
+The ``4-print_square`` module
+======================
+
+Using ``print_square``
+-------------------
+
+Import function:
+>>> print_square = __import__("4-print_square").print_square
+
+Check module docstr:
+>>> len(__import__("4-print_square").__doc__) > 1
+True
+
+Check function docstr:
+>>> len(__import__("4-print_square").print_square.__doc__) > 1
+True
+
+Check normal cases:
+>>> print_square(6)
+######
+######
+######
+######
+######
+######
+
+>>> print_square(0)
+
+>>> print_square(6.2)
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
+
+Check negative args:
+>>> print_square(-10)
+Traceback (most recent call last):
+...
+ValueError: size must be >= 0
+
+Check str args:
+>>> print_square("Hola bebé")
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
+
+Check no args:
+>>> print_square()
+Traceback (most recent call last):
+...
+TypeError: print_square() takes exactly 1 argument (0 given)
+
+Check several args:
+>>> print_square(1, 2)
+Traceback (most recent call last):
+...
+TypeError: print_square() takes exactly 1 positional argument (2 given)

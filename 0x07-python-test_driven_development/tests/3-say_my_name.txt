@@ -5,7 +5,7 @@ Using ``say_my_name``
 -------------------
 
 Import function:
->>> add_integer = __import__("3-say_my_name").say_my_name
+>>> say_my_name = __import__("3-say_my_name").say_my_name
 
 Check module docstring:
 >>> len(__import__("3-say_my_name").__doc__) > 1
@@ -15,24 +15,35 @@ Check function docstring:
 >>> len(__import__("3-say_my_name").say_my_name.__doc__) > 1
 True
 
+>>> say_my_name("Benito", "Cámelas")
+My name is Benito Cámelas
+
 Check only one entrance:
 >>> say_my_name("Holi")
-My name is Holi
+My name is Holi 
+
+Check void str entrances:
+>>> say_my_name("", "")
+My name is  
+
+Check only a void str entrance:
+>>> say_my_name("")
+My name is  
 
 Check int printing:
->>> add_integer(-1, 2)
+>>> say_my_name(-1, 2)
 Traceback (most recent call last):
 ...
 TypeError: first_name must be a string
 
 Check several arguments:
->>> add_integer("Hola", "Hello", "Bonjour")
+>>> say_my_name("Hola", "Hello", "Bonjour")
 Traceback (most recent call last):
 ...
 TypeError: say_my_name() takes at most 2 positional arguments (3 given)
 
 Check no arguments:
->>> add_integer()
+>>> say_my_name()
 Traceback (most recent call last):
 ...
 TypeError: say_my_name() takes at least 1 argument (0 given)
