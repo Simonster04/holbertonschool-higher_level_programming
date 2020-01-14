@@ -15,8 +15,30 @@ Check function docstring:
 >>> len(__import__("2-matrix_divided").matrix_divided.__doc__) > 1
 True
 
+Check only one arg:
+>>> matrix_divided ([[1, 2, 3], [1, 2, 3]])
+Traceback (most recent call last):
+...
+TypeError: matrix_divided() takes exactly 2 arguments (1 given)
+
 Check no argument:
 >>> matrix_divided()
 Traceback (most recent call last):
 ...
-TypeError: matrix_divided() takes at least 1 argument (0 given)
+TypeError: matrix_divided() takes exactly 2 arguments (0 given)
+
+Check division by negative number:
+>>> matrix_divided([[1, 2, 3], [1, 2, 3]], -4)
+[[-0.25, -0.5, -0.75], [-0.25, -0.5, -0.75]]
+
+Check division by a str:
+>>> matrix_divided ([[1, 2, 3], [1, 2, 3]], "mama")
+Traceback (most recent call last):
+...
+TypeError: div must be a number
+
+Check division by 0:
+>>> matrix_divided([[1, 2, 3], [1, 2, 3]], 0)
+Traceback (most recent call last):
+...
+ZeroDivisionError: division by zero
