@@ -11,6 +11,8 @@ def text_indentation(text):
     aux = 0
     if not isinstance(text, str):
         raise TypeError("text must be a string")
+    text = text.strip(' ')
+    text = text.strip('\t')
     for i in text:
         if i == '.' or i == '?' or i == ':':
             print(i, end="")

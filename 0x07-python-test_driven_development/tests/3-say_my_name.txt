@@ -15,8 +15,8 @@ Check function docstring:
 >>> len(__import__("3-say_my_name").say_my_name.__doc__) > 1
 True
 
->>> say_my_name("Benito", "Cámelas")
-My name is Benito Cámelas
+>>> say_my_name("Benito", "Camelas")
+My name is Benito Camelas
 
 Check only one entrance:
 >>> say_my_name("Holi")
