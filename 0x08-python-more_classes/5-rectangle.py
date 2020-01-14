@@ -8,6 +8,7 @@
 
 class Rectangle:
     """ defines a rectangle """
+
     def __init__(self, width=0, height=0):
         self.height = height
         self.width = width
@@ -46,8 +47,16 @@ class Rectangle:
 
     def perimeter(self):
         """ Returns the perimeter of the rectangle"""
-        return 2*(self.height + self.width)
+        return 2 * (self.height + self.width)
 
     def __str__(self):
         """ Returns like a string """
         return (("#" * (self.__width) + '\n') * self.__height).strip("\n")
+
+    def __repr__(self):
+        """ Returns the object representation """
+        return "Rectangle({}, {})".format(self.__width, self.__height)
+
+    def __del__(self):
+        """ Print a message when you delete the rectangle"""
+        print("Bye rectangle...")
