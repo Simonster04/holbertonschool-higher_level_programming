@@ -9,6 +9,7 @@
 class Rectangle:
     """ defines a rectangle """
     def __init__(self, width=0, height=0):
+        """ initialization """
         self.height = height
         self.width = width
 
@@ -42,8 +43,8 @@ class Rectangle:
 
     def area(self):
         """ Returns the area of the rectangle"""
-        return self.height * self.width
+        return self.__height * self.__width
 
     def perimeter(self):
         """ Returns the perimeter of the rectangle"""
-        return 2*(self.height + self.width)
+        return 2*(self.__height + self.__width)
