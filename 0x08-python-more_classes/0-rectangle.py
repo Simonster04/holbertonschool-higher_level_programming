@@ -1,4 +1,3 @@
-  
 #!/usr/bin/python3
 """
 Contains an empty class Rectangle
