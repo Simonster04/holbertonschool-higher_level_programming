@@ -1,0 +1,59 @@
+The ``7-base_geometry`` module
+======================
+
+Using ``BaseGeometry``
+-------------------
+
+This is an example text file in reStructuredText format.  First
+import ```BaseGeometry``` from the ``7_Base_Geometry`` module:
+
+testing import
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+area
+>>> 'area' in dir(BaseGeometry)
+True
+
+integer_validator
+>>> 'integer_validator' in dir(BaseGeometry)
+True
+
+>>> a = BaseGeometry()
+>>> print(a.area())
+Traceback (most recent call last):
+Exception: area() is not implemented
+
+>>> type(a)
+<class '7-base_geometry.BaseGeometry'>
+
+>>> a.integer_validator("my_int", 1)
+
+Check negative number
+>>> a.integer_validator("width", -4)
+Traceback (most recent call last):
+ValueError: width must be greater than 0
+
+Check 0
+>>> a.integer_validator("age", 0) 
+Traceback (most recent call last):
+ValueError: age must be greater than 0
+
+Check only one argument
+>>> a.integer_validator("age", )
+Traceback (most recent call last):
+TypeError: integer_validator() takes exactly 3 arguments (2 given)
+
+Check only the other argument
+>>> basegeo.integer_validator(, 5)
+Traceback (most recent call last):
+SyntaxError: invalid syntax
+
+Check no arguments
+>>> a.integer_validator()
+Traceback (most recent call last):
+TypeError: integer_validator() takes exactly 3 arguments (1 given)
+
+Check more than two arguments
+>>> a.integer_validator("age", 22, 24)
+Traceback (most recent call last):
+TypeError: integer_validator() takes exactly 3 positional arguments (4 given)
