@@ -4,12 +4,10 @@
  contains Square subclase of Rectangle subclass
 """
 
+
 class BaseGeometry:
     """ class with area and integer_validation
      public instance methods """
-    def __init__(self):
-        """ initializing class"""
-
     def area(self):
         """ raises an Exception if it is called """
         raise Exception("area() is not implemented")
