@@ -5,8 +5,7 @@
 
 
 def append_after(filename="", search_string="", new_string=""):
-    """ inserts a line of text to a file, after each
-     line containing a specific string """
+    """ inserts a line of text after a specific string """
     with open(filename, encoding="utf-8") as myFile:
         linelist = []
         while True:
@@ -16,5 +15,5 @@ def append_after(filename="", search_string="", new_string=""):
                 linelist.append(new_string)
             if not line:
                 break
-    with open(filename, mode = "w", encoding="utf-8") as myFile:
+    with open(filename, mode="w", encoding="utf-8") as myFile:
         myFile.writelines(linelist)
