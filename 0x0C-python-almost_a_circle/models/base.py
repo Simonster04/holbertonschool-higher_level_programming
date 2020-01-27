@@ -7,8 +7,8 @@ contains Base class
 class Base:
     """ defines a base class for rest of project """
     __nb_objects = 0
-    def __init__(self, id=None):
 
+    def __init__(self, id=None):
         if id is not None:
             self.id = id
         else:
