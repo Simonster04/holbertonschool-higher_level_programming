@@ -30,5 +30,6 @@ class Base:
         with open(filename, mode="w") as myFile:
             if list_objs is None:
                 myFile.write("[]")
-            list_dict = [obj.to_dictionary() for obj in list_objs]
-            myFile.write(Base.to_json_string(list_dict))
+            else:
+                list_dict = [obj.to_dictionary() for obj in list_objs]
+                myFile.write(Base.to_json_string(list_dict))
