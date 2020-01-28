@@ -31,4 +31,4 @@ class Base:
             if list_objs is None:
                 myFile.write("[]")
             list_dict = [obj.to_dictionary() for obj in list_objs]
-            myFile.write(cls.to_json_string(list_dict))
+            myFile.write(Base.to_json_string(list_dict))
