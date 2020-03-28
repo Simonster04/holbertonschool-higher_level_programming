@@ -13,12 +13,12 @@ from sys import argv
 
 if __name__ == "__main__":
     db = argv[3]
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(argv[1],
-                                                                       argv[2],
-                                                                       db))
-    Base.metadata.create_all(engine)
+    eng = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(argv[1],
+                                                                    argv[2],
+                                                                    db))
+    Base.metadata.create_all(eng)
 
-    Session = sessionmaker(bind=engine)
+    Session = sessionmaker(bind=eng)
     session = Session()
     for state in session.query(State).order_by(State.id).all():
         print("{}: {}".format(state.id, state.name))
