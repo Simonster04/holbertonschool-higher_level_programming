@@ -17,7 +17,6 @@ if __name__ == "__main__":
                                                                     argv[2],
                                                                     db))
     Base.metadata.create_all(eng)
-
     Session = sessionmaker(bind=eng)
     session = Session()
     for state in session.query(State).order_by(State.id).all():
