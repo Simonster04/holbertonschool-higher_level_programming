@@ -16,10 +16,10 @@ if __name__ == "__main__":
     eng = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(argv[1],
                                                                     argv[2],
                                                                     argv[3]))
-Base.metadata.create_all(eng)
-Session = sessionmaker(bind=eng)
-session = Session()
-for state in session.query(State).filter(
-             State.name.like('%a%')).order_by(State.id).all():
-    print("{}: {}".format(state.id, state.name))
-session.close()
+    Base.metadata.create_all(eng)
+    Session = sessionmaker(bind=eng)
+    session = Session()
+    for state in session.query(State).filter(
+                 State.name.like('%a%')).order_by(State.id).all():
+        print("{}: {}".format(state.id, state.name))
+    session.close()
