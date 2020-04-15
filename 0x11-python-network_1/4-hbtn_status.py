@@ -3,13 +3,12 @@
  Fetches https://intranet.hbtn.io/status
 """
 
-import urllib.request
+import requests
 
 
 if __name__ == "__main__":
-    with urllib.request.urlopen('https://intranet.hbtn.io/status') as response:
-        html = response.read().decode('utf-8')
+    r = requests.get('https://intranet.hbtn.io/status')
 
     print("Body response:")
-    print("\t- type: {}".format(type(html)))
-    print("\t- content: {}".format(html))
+    print("\t- type: {}".format(type(str(r))))
+    print("\t- content: {}".format(r.text))
