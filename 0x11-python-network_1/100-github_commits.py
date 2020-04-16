@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-""" Takes your Github credentials (username and password)
-    and uses the Github API to display your id
+"""List 10 commits (from the most recent to oldest) of the
+   repository. argv1 is the repo name, argv2 is owner name
 """
 
 import requests
