@@ -3,7 +3,7 @@
 const WedgeAntilles = 'https://swapi-api.hbtn.io/api/people/18/';
 const request = require('request');
 request(process.argv[2], function (error, response, body) {
-  if (!error) {
+  if (!error && response.statusCode === 200) {
     let cont = 0;
     for (let i = 0; i < JSON.parse(body).results.length; i++) {
       for (let j = 0; j < JSON.parse(body).results[i].characters.length; j++) {
